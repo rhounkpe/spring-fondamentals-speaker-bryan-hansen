@@ -7,8 +7,14 @@ public class Application {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
         // SpeakerService speakerService = new SpeakerServiceImpl();
+
         SpeakerService speakerService = context.getBean("speakerService", SpeakerService.class);
 
+        System.out.println(speakerService);
         System.out.println(speakerService.findAll().get(0).getFirstName());
+
+        SpeakerService speakerService2 = context.getBean("speakerService", SpeakerService.class);
+
+        System.out.println(speakerService2);
     }
 }
