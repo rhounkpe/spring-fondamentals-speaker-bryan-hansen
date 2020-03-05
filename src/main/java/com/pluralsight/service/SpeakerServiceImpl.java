@@ -22,6 +22,11 @@ public class SpeakerServiceImpl implements SpeakerService {
         this.repository = repository;
     }
 
+    // @PostConstruct
+    private void initialize() {
+        System.out.println("We're called after the constructors");
+    }
+
     @Override
     public List<Speaker> findAll() {
         return repository.findAll();
